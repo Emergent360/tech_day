@@ -1,12 +1,11 @@
 Convert to RHEL Exercise Instructions
 
 
-1. SSH into Node1
-   - ssh node1
+1. SSH into Rocky server
 
 
 2. Login and sudo to root
-    - sudo su –
+    - sudo su â€“
 
 3. Update Rocky and reboot
    - dnf update
@@ -14,7 +13,7 @@ Convert to RHEL Exercise Instructions
 
 4. Login again, sudo to root
 
-   - sudo su –
+   - sudo su â€“
 
 5. Download GPG key, PEM, and convert2rhel repo info
 
@@ -59,7 +58,7 @@ Convert to RHEL Exercise Instructions
 
 
 11. Login again, sudo to root, and verify system has been upgraded to RHEL:
-    a. uname –r
+    a. uname â€“r
     b. cat /etc/redhat-release
     c. subscription-manager list 
 
