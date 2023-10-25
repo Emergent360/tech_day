@@ -1,0 +1,65 @@
+CentOs 7 Convert to RHEL Exercise Instructions
+
+
+1. SSH into Node1
+   - ssh node1
+
+
+2. Login and sudo to root
+    - sudo su –
+
+3. Update CentOS box and reboot
+   - dnf update
+   - reboot
+
+4. Login again, sudo to root
+
+   - sudo su –
+
+5. Download GPG key, PEM, and convert2rhel repo info
+
+    - curl -o /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release https://www.redhat.com/security/data/fd431d51.txt
+
+    - curl --create-dirs -o /etc/rhsm/ca/redhat-uep.pem https://ftp.redhat.com/redhat/convert2rhel/redhat-uep.pem
+
+    - curl -o /etc/yum.repos.d/convert2rhel.repo https://ftp.redhat.com/redhat/convert2rhel/7/convert2rhel.repo
+
+6. Install convert2rhel RPM
+
+    - yum -y install convert2rhel
+
+7. Add activation key. INI file should look like below after opening file using VI. Update the "activation_key" value to convert2rhel_demo. 
+
+    - vi /etc/convert2rhel.ini
+        
+	# -*- coding: utf-8 -*-
+        # This file should be in mode 0600
+        # Example of configuration file convert2rhel.ini for secrets.
+        # Possible locations of this file:
+        # 1) user specified and passed by -c, --config-file option; highest priority
+        # 2) ~/.convert2rhel.ini; lower priority
+        # 3) /etc/convert2rhel.ini; the lowest priority
+
+        [subscription_manager]
+        # password = <insert_password>
+        activation_key = convert2rhel_demo
+
+
+8. Run convert2rhel command
+
+   convert2rhel --org 13156267 --debug --no-rpm-va
+
+
+9. IF the conversion fails, the kernel module may cause convert2rhel to fail, so we must ignore that step by setting following environment variable. Run the command below and try again. 
+
+   export CONVERT2RHEL_ALLOW_UNAVAILABLE_KMODS=1
+
+
+10. Reboot the system
+
+
+11. Login again, sudo to root, and verify system has been upgraded to RHEL:
+    a. uname –r
+    b. cat /etc/redhat-release
+    c. subscription-manager list 
+
