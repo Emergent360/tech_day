@@ -1,8 +1,8 @@
 CentOs 7 Convert to RHEL Exercise Instructions
 
 
-1. SSH into Node1
-   - ssh node1
+1. SSH into Node4
+   - ssh centos@node4
 
 
 2. Login and sudo to root
