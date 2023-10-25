@@ -6,15 +6,15 @@ CentOs 7 Convert to RHEL Exercise Instructions
 
 
 2. Login and sudo to root
-    - sudo su –
+    - sudo su â€“
 
 3. Update CentOS box and reboot
-   - dnf update
+   - yum update
    - reboot
 
 4. Login again, sudo to root
 
-   - sudo su –
+   - sudo su â€“
 
 5. Download GPG key, PEM, and convert2rhel repo info
 
@@ -59,7 +59,7 @@ CentOs 7 Convert to RHEL Exercise Instructions
 
 
 11. Login again, sudo to root, and verify system has been upgraded to RHEL:
-    a. uname –r
+    a. uname â€“r
     b. cat /etc/redhat-release
     c. subscription-manager list 
 
