@@ -24,7 +24,7 @@ variable "instance_type" {
 
 variable "instance_ami" {
   type    = string
-  default = "ami-097104a26f5e1c26a"
+  default = "ami-01db231c6b0e94923"
 }
 
 variable "zoneid" {
@@ -34,17 +34,17 @@ variable "zoneid" {
 
 variable "ws_name" {
   type    = string
-  default = "Workshop Name"
+  default = "Convert2RHEL"
 }
 
 variable "ws_id" {
   type    = string
-  default = "dde98b"
+  default = "C2R"
 }
 
 variable "instances" {
   type    = list(string)
-  default = ["rocky", "bullwinkle", "boris", "natasha"]
+  default = ["centos"]
 }
 
 resource "aws_vpc" "vpc" {
