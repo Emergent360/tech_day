@@ -24,7 +24,7 @@ variable "instance_type" {
 
 variable "instance_ami" {
   type    = string
-  default = "ami-01db231c6b0e94923"
+  default = "ami-02d060033a2cb3b97"
 }
 
 variable "zoneid" {
