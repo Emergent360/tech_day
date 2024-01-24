@@ -24,7 +24,7 @@ variable "instance_type" {
 
 variable "instance_ami" {
   type    = string
-  default = "ami-02d060033a2cb3b97"
+  default = "ami-097104a26f5e1c26a"
 }
 
 variable "zoneid" {
@@ -44,7 +44,7 @@ variable "ws_id" {
 
 variable "instances" {
   type    = list(string)
-  default = ["centos"]
+  default = ["rocky"]
 }
 
 resource "aws_vpc" "vpc" {
