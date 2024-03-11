@@ -5,7 +5,7 @@
   tasks:
 
     - name: Install Apache
-      ansible.builtin.dnf:
+      ansible.builtin.yum:
         name: httpd
 
     - name: Apache enabled and running
