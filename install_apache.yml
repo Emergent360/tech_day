@@ -1,6 +1,6 @@
 ---
 - name: Apache server installed
-  hosts: node1
+  hosts: rhel
   become: true
   tasks:
 
