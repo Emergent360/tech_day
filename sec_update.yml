@@ -1,6 +1,11 @@
---- 
-- name: Update security packages
-  ansible.builtin.dnf:
-    name: "*"
-    state: latest
-    security: true 
+---
+- name: Sec Packages 
+  hosts: rhel
+  become: true
+  tasks:
+
+  - name: Update security packages
+    ansible.builtin.dnf:
+      name: "*"
+      state: latest
+      security: true 
