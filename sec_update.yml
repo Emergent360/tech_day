@@ -4,8 +4,8 @@
   become: true
   tasks:
 
-  - name: Update security packages
-    ansible.builtin.dnf:
-      name: "*"
-      state: latest
-      security: true 
+    - name: Update security packages
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+        security: true 
