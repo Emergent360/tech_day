@@ -5,7 +5,7 @@
   tasks:
 
     - name: Update security packages
-      ansible.builtin.dnf:
+      ansible.builtin.yum:
         name: "*"
         state: latest
         security: true 
