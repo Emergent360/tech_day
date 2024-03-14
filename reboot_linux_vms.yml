@@ -1,0 +1,10 @@
+---
+- name: reboot my linux vms
+  hosts: all
+  gather_facts: no
+  become: true 
+  
+  tasks:
+    - name: reboooot
+      reboot:
+        reboot_timeout: 120
