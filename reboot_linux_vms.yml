@@ -1,5 +1,5 @@
 ---
-- name: reboot my linux vms
+- name: reboot my rhel vms
   hosts: all
   gather_facts: no
   become: true 
