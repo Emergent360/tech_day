@@ -8,13 +8,15 @@ CentOs 7 Convert to RHEL Exercise Instructions
 2. Login and sudo to root
     - sudo su –
 
-3. Update CentOS box and reboot
-   - yum update -y 
+3. Update the Repositories on the CentOS VM. 
+   - sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/CentOS-*.repo
+   - sed -i s/^#.*baseurl=http/baseurl=http/g /etc/yum.repos.d/CentOS-*.repo
+   - sed -i s/^mirrorlist=http/#mirrorlist=http/g /etc/yum.repos.d/CentOS-*.repo
+
+4. Run an yum update
+   - yum update 
    - reboot
-
-4. Login again, sudo to root
-
-   - sudo su –
+   - SSH back into CentOS VM then become root. 
 
 5. Download RH GPG key and install convert2rhel repo
 
