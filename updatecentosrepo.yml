@@ -5,4 +5,4 @@
 
   tasks: 
     - name: point machine to correct Repo
-      ansible.builtin.command: sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/CentOS-*.repo
+      ansible.builtin.command: sudo sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/CentOS-*.repo
