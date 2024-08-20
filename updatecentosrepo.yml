@@ -1,0 +1,8 @@
+---
+- name: Update centos7 VMs Repo
+  hosts: centos7
+  become: true
+
+  tasks: 
+    - name: point machine to correct Repo
+      ansible.builtin.command: sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/CentOS-*.repo
